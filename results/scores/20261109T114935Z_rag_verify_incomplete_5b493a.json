@@ -1,0 +1,241 @@
+{
+  "run_id": "20261109T114935Z_rag_verify_incomplete_5b493a",
+  "method": "rag_verify",
+  "model": "gemini-3.6-flash",
+  "problem_id": "RE21",
+  "description_variant": "incomplete",
+  "corpus": "documentation_only",
+  "judge_model": "gemini-3.5-flash",
+  "overrides_applied": [],
+  "warnings": [],
+  "objective_mapping": {
+    "o1": "f1",
+    "o2": "f2"
+  },
+  "per_objective": {
+    "f1": {
+      "items": 3,
+      "true_positives": 3,
+      "false_positives": 0,
+      "duplicates": 0,
+      "required": 6,
+      "covered": 6,
+      "missing": 0,
+      "missing_ids": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "unsupported_items": 2,
+      "unsupported_rate": 0.6666666666666666,
+      "type_errors": 0,
+      "meaning_errors": 0,
+      "over_attributions": 0,
+      "not_in_implementation": 0,
+      "vague": 0,
+      "covered_from_description": 4,
+      "covered_beyond_description": 2,
+      "beyond_description_with_verified_evidence": 0
+    },
+    "f2": {
+      "items": 4,
+      "true_positives": 3,
+      "false_positives": 1,
+      "duplicates": 0,
+      "required": 8,
+      "covered": 6,
+      "missing": 2,
+      "missing_ids": [
+        "f2:L",
+        "f2:expr_displacement"
+      ],
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "unsupported_items": 2,
+      "unsupported_rate": 0.5,
+      "type_errors": 1,
+      "meaning_errors": 0,
+      "over_attributions": 0,
+      "not_in_implementation": 1,
+      "vague": 0,
+      "covered_from_description": 4,
+      "covered_beyond_description": 2,
+      "beyond_description_with_verified_evidence": 1
+    }
+  },
+  "overall": {
+    "items": 7,
+    "true_positives": 6,
+    "false_positives": 1,
+    "duplicates": 0,
+    "required": 14,
+    "covered": 12,
+    "missing": 2,
+    "missing_ids": [
+      "f2:L",
+      "f2:expr_displacement"
+    ],
+    "precision": 0.8571428571428571,
+    "recall": 0.8571428571428571,
+    "f1": 0.8571428571428571,
+    "unsupported_items": 4,
+    "unsupported_rate": 0.5714285714285714,
+    "type_errors": 1,
+    "meaning_errors": 0,
+    "over_attributions": 0,
+    "not_in_implementation": 1,
+    "vague": 0,
+    "covered_from_description": 8,
+    "covered_beyond_description": 4,
+    "beyond_description_with_verified_evidence": 1
+  },
+  "items": [
+    {
+      "extracted_objective_id": "o1",
+      "reference_objective_id": "f1",
+      "dependency": "Cross-sectional areas of the four bars",
+      "type": "decision_variable",
+      "evidence_status": "explicit",
+      "evidence_verified": true,
+      "entity_ids": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers explicitly to the cross-sectional decision variables of all four bars.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches x1, x2, x3, x4",
+      "credited": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ]
+    },
+    {
+      "extracted_objective_id": "o1",
+      "reference_objective_id": "f1",
+      "dependency": "Lengths of the four bars",
+      "type": "parameter",
+      "evidence_status": "inferred",
+      "evidence_verified": false,
+      "entity_ids": [
+        "L"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the member length parameter L of the truss members.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches L",
+      "credited": [
+        "L"
+      ]
+    },
+    {
+      "extracted_objective_id": "o1",
+      "reference_objective_id": "f1",
+      "dependency": "Total volume calculation formula",
+      "type": "mathematical_expression",
+      "evidence_status": "inferred",
+      "evidence_verified": false,
+      "entity_ids": [
+        "expr_volume"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the volume expression for calculating total structural volume.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches expr_volume",
+      "credited": [
+        "expr_volume"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Cross-sectional areas of the four bars",
+      "type": "decision_variable",
+      "evidence_status": "explicit",
+      "evidence_verified": true,
+      "entity_ids": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers explicitly to all four member cross-sectional area decision variables.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches x1, x2, x3, x4",
+      "credited": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Applied load",
+      "type": "input_data",
+      "evidence_status": "explicit",
+      "evidence_verified": true,
+      "entity_ids": [
+        "F"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to applied load F, but extracted as input_data instead of parameter.",
+      "type_error": true,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches F",
+      "credited": [
+        "F"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Modulus of elasticity",
+      "type": "parameter",
+      "evidence_status": "inferred",
+      "evidence_verified": false,
+      "entity_ids": [
+        "E"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the elastic modulus parameter E.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches E",
+      "credited": [
+        "E"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Truss structural analysis model",
+      "type": "analytical_model",
+      "evidence_status": "inferred",
+      "evidence_verified": false,
+      "entity_ids": [],
+      "judge_category": "not_in_implementation",
+      "judge_explanation": "Refers to an analytical/structural model component which is not explicit in the reference implementation.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "false_positive",
+      "reason": "plausible, but not part of the implementation"
+    }
+  ]
+}

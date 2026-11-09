@@ -1,0 +1,86 @@
+S.1.1. RE2-4-1: Four bar truss design problem
+The RE2-4-1 problem is to minimize the structural volume (f1) and the joint
+displacement (f2) of the four bar truss [S.1]. The two objective functions of the
+RE2-4-1 problem are given:
+f1(x) =L(2x1 +
+√
+2x2 +√x3 +x4), (S.1)
+f2(x) = FL E
+(
+2
+x1
++ 2
+√
+2
+x2
+− 2
+√
+2
+x3
++ 2 x4
+)
+, (S.2)
+where x1,x 4 ∈ [a, 3a], x2,x 3 ∈ [
+√
+2a, 3a], and a = F/σ. The four variables
+determine the length of four bars, respectively. The parameters are given as
+follows: F = 10 kN, E = 2× 105kN/cm2, L = 200 cm, σ = 10 kN/cm2.
+S.1.2. RE2-3-2: Reinforced concrete beam design problem
+The ﬁrst objective of the RE2-3-2 problem is to minimize the total cost of
+concrete and reinforcing steel of the beam [S.2]:
+f1(x) = 29.4x1 + 0.6x2x3, (S.3)
+g1(x) =x1x3− 7.735x2 1 x2 − 180≥ 0, (S.4)
+g2(x) = 4− x3 x2 ≥ 0, (S.5)
+where x2∈ [0, 20] and x3∈ [0, 40]. We determined the ranges of x2 and x3
+according to initial solutions in [S.2]. x1 has a pre-deﬁned discrete value from
+0.2 to 15 1. The three variables ( x1,x 2, and x3) represent the area of the rein-
+forcement, the width of the beam, and the depth of the beam, respectively.
+The second objective of RE2-3-2 is the sum of the two constraint violations:
+f2(x) =
+2∑
+i=1
+max{−gi(x), 0}. (S.6)
+S.1.3. RE2-4-3: Pressure vessel design problem
+The ﬁrst objective of the RE2-4-3 problem is to minimize the total cost (in-
+cluding the cost of material and the cost of forming and welding) of a cylindrical
+pressure vessel [S.3]:
+f1(x) =0.6224x1x3x4 + 1.7781x2x2 3
++ 3.1661x2 1x4 + 19.84x2 1x3, (S.7)
+g1(x) =x1− 0.0193x3≥ 0, (S.8)
+g2(x) =x2− 0.00954x3≥ 0, (S.9)
+g3(x) =πx2 3x4 + 4 3πx3 3− 1 296 000≥ 0, (S.10)
+where x1,x 2∈{ 1,..., 100}, x3∈ [10, 200], and x4∈ [10, 240]. x1 and x2 are
+integer multiples of 0 .0625. x1, x2, x3, and x4 represent the thicknesses of
+the shell, the head of a pressure vessel, the inner radius, and the length of
+the cylindrical section, respectively. We determined the ranges of x2 and x3
+according to [S.3].
+The second objective of RE2-4-3 is the sum of the three constraint violations:
+f2(x) =
+3∑
+i=1
+max{−gi(x), 0}. (S.11)
+1For details, x1∈{ 0.2, 0.31, 0.4, 0.44, 0.6, 0.62, 0.79, 0.8, 0.88, 0.93, 1, 1.2, 1.24, 1.32, 1.4, 1.55,
+1.58, 1.6, 1.76, 1.8, 1.86, 2, 2.17, 2.2, 2.37, 2.4, 2.48, 2.6, 2.64, 2.79, 2.8, 3, 3.08, 3, 1, 3.16, 3.41, 3.52,
+3.6, 3.72, 3.95, 3.96, 4, 4.03, 4.2, 4.34, 4.4, 4.65, 4.74, 4.8, 4.84, 5, 5.28, 5.4, 5.53, 5.72, 6, 6.16, 6.32,
+6.6, 7.11, 7.2, 7.8, 7.9, 8, 8.4, 8.69, 9, 9.48, 10.27, 11, 11.06, 11.85, 12, 13, 14, 15}.
+2
+S.1.4. RE2-2-4: Hatch cover design problem
+The ﬁrst objective of the RE2-2-4 problem is to minimize the weight of the
+hatch cover [S.2]:
+f1(x) =x1 + 120x2, (S.12)
+g1(x) = 1.0− σb σb,max ≥ 0, (S.13)
+g2(x) = 1.0− τ τmax ≥ 0, (S.14)
+g3(x) = 1.0− δ δmax ≥ 0, (S.15)
+g4(x) = 1.0− σb σk ≥ 0, (S.16)
+where x1∈ [0.5, 4] and x2∈ [4, 50]. The ranges of the two variables were deter-
+mined according to solutions reported in [S.2]. x1 and x2 represent the ﬂange
+thickness and the beam height of the hatch cover, respectively. The parameters
+are given as follows: σb,max = 700kg/cm 2, τmax = 450 kg/cm, δmax = 1.5cm,
+σk = Ex2 1/100 kg/cm 2, σb = 4 500/(x1x2)kg/cm2 τ = 1 800/x2kg/cm2, δ =
+56.2× 104/(Ex1x2 2), and E = 700 000 kg/cm2.
+The second objective of RE2-2-4 is the sum of the four constraint violations:
+f2(x) =
+4∑
+i=1
+max{−gi(x), 0}. (S.17)
+3

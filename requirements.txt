@@ -1,0 +1,8 @@
+# Python 3.12 or 3.13 required (DESDEO 2.x does not support 3.14).
+# PyPI "desdeo" is DESDEO 1.x (different API) - install DESDEO 2 from GitHub, pinned:
+desdeo @ git+https://github.com/industrial-optimization-group/DESDEO.git@64ed671ef65a43e068357af0dec36d1f139faceb
+google-genai>=3.0,<4
+chromadb>=1.5,<2
+python-dotenv>=1.0
+pypdf>=7.0          # only for scripts/collect_sources.py
+pytest>=8

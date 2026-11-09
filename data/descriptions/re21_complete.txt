@@ -1,0 +1,5 @@
+A structural engineer is designing a statically loaded truss made of four bars. The engineer can choose how thick each bar is, that is, the cross-sectional area of each of the four bars, and these four areas are the only quantities the engineer can change.
+
+Two goals are pursued at the same time. First, the engineer wants to use as little material as possible, so the total volume of the structure should be as small as possible. Second, the structure should be as stiff as possible, so the displacement of one particular joint of the truss under load should be as small as possible.
+
+The geometry of the truss is fixed, with a characteristic bar length of 200 cm. A single external force of 10 kN acts on the structure. All bars are made of the same material, whose modulus of elasticity is 2 x 10^5 kN/cm^2. The allowable stress of the material is 10 kN/cm^2; because a bar that is too thin would be overstressed, the allowable stress together with the force determines how small each cross-sectional area may be, and every area may be at most three times that minimum.

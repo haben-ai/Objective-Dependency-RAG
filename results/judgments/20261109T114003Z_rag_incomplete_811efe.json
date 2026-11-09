@@ -1,0 +1,133 @@
+{
+  "run_id": "20261109T114003Z_rag_incomplete_811efe",
+  "judge_model": "gemini-3.5-flash",
+  "raw_judgment": {
+    "objective_mapping": [
+      {
+        "extracted_objective_id": "o1",
+        "reference_objective_id": "f1"
+      },
+      {
+        "extracted_objective_id": "o2",
+        "reference_objective_id": "f2"
+      }
+    ],
+    "items": [
+      {
+        "extracted_objective_id": "o1",
+        "dependency_name": "Cross-sectional areas of the four bars",
+        "entity_ids": [
+          "x1",
+          "x2",
+          "x3",
+          "x4"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers explicitly to the cross-sectional areas of all four bars (x1, x2, x3, x4)."
+      },
+      {
+        "extracted_objective_id": "o1",
+        "dependency_name": "Bar length scale parameter",
+        "entity_ids": [
+          "L"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers to the characteristic bar length parameter L."
+      },
+      {
+        "extracted_objective_id": "o1",
+        "dependency_name": "Mathematical expression for structural volume",
+        "entity_ids": [
+          "expr_volume"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers to the mathematical expression for structural volume."
+      },
+      {
+        "extracted_objective_id": "o2",
+        "dependency_name": "Cross-sectional areas of the four bars",
+        "entity_ids": [
+          "x1",
+          "x2",
+          "x3",
+          "x4"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers explicitly to the cross-sectional areas of all four bars (x1, x2, x3, x4)."
+      },
+      {
+        "extracted_objective_id": "o2",
+        "dependency_name": "Applied force",
+        "entity_ids": [
+          "F"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers to the applied force load F."
+      },
+      {
+        "extracted_objective_id": "o2",
+        "dependency_name": "Modulus of elasticity",
+        "entity_ids": [
+          "E"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers to Young's modulus E."
+      },
+      {
+        "extracted_objective_id": "o2",
+        "dependency_name": "Bar length scale parameter",
+        "entity_ids": [
+          "L"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers to the characteristic bar length parameter L."
+      },
+      {
+        "extracted_objective_id": "o2",
+        "dependency_name": "Mathematical expression for joint displacement",
+        "entity_ids": [
+          "expr_displacement"
+        ],
+        "category": "matches_entity",
+        "type_correct": true,
+        "meaning_error": false,
+        "explanation": "Refers to the mathematical expression for joint displacement."
+      }
+    ]
+  },
+  "llm_call": {
+    "purpose": "judge",
+    "model": "gemini-3.5-flash",
+    "system": "You are an annotator mapping an LLM's extracted objective dependencies onto a reference list of\nentities for a multiobjective optimization problem. You do NOT decide whether an item is a correct dependency\nof its objective; you only decide which reference entity (if any) each extracted item DENOTES.\n\n1. Map every extracted objective to the reference objective with the same meaning (or null).\n2. For every extracted dependency item, list the reference entity ids it denotes:\n   - Same underlying quantity, not just similar wording. \"stress\" is not the elastic modulus; \"length\" is L only\n     if it denotes the bar/member length.\n   - An item that explicitly covers several entities (e.g. \"cross-sectional areas of the four bars\") lists all of\n     them. An item covering only some lists only those.\n   - An item describing how the objective is computed from its inputs (a formula, an equation, a sum of terms)\n     denotes the reference expression entity for that quantity (volume expression / displacement expression).\n     Different coefficients do not matter for the mapping.\n   - A generic, category-level item that does not identify a specific quantity (\"material properties\",\n     \"geometry\", \"boundary conditions\") denotes nothing: category \"vague\". If such an item names several things\n     of which some are specific reference quantities, list only those it names specifically.\n   - A plausible engineering component that the reference does not contain (e.g. a finite element model,\n     density, node coordinates) denotes nothing: category \"not_in_implementation\".\n   - Anything else that denotes no reference entity: category \"incorrect\".\n   - When entity_ids is non-empty, category is \"matches_entity\".\n3. type_correct: compare the extracted type with the reference entity type.\n4. meaning_error: true when the item clearly points at a reference entity but describes it with a wrong\n   physical meaning (e.g. calling the cross-sectional areas \"bar lengths\").\nReturn one item judgment for EVERY extracted dependency, copying objective ids and names exactly.",
+    "prompt": "REFERENCE:\n{\n \"reference_objectives\": [\n  {\n   \"id\": \"f1\",\n   \"meaning\": \"Structural volume of the truss\",\n   \"direction\": \"minimize\"\n  },\n  {\n   \"id\": \"f2\",\n   \"meaning\": \"Displacement of a joint of the truss\",\n   \"direction\": \"minimize\"\n  }\n ],\n \"reference_entities\": [\n  {\n   \"id\": \"x1\",\n   \"type\": \"decision_variable\",\n   \"name\": \"Cross-sectional area of member 1\",\n   \"aliases\": [\n    \"x1\",\n    \"x_1\",\n    \"area of bar 1\",\n    \"cross-section of member 1\",\n    \"A1\"\n   ]\n  },\n  {\n   \"id\": \"x2\",\n   \"type\": \"decision_variable\",\n   \"name\": \"Cross-sectional area of member 2\",\n   \"aliases\": [\n    \"x2\",\n    \"x_2\",\n    \"area of bar 2\",\n    \"cross-section of member 2\",\n    \"A2\"\n   ]\n  },\n  {\n   \"id\": \"x3\",\n   \"type\": \"decision_variable\",\n   \"name\": \"Cross-sectional area of member 3\",\n   \"aliases\": [\n    \"x3\",\n    \"x_3\",\n    \"area of bar 3\",\n    \"cross-section of member 3\",\n    \"A3\"\n   ]\n  },\n  {\n   \"id\": \"x4\",\n   \"type\": \"decision_variable\",\n   \"name\": \"Cross-sectional area of member 4\",\n   \"aliases\": [\n    \"x4\",\n    \"x_4\",\n    \"area of bar 4\",\n    \"cross-section of member 4\",\n    \"A4\"\n   ]\n  },\n  {\n   \"id\": \"F\",\n   \"type\": \"parameter\",\n   \"name\": \"Applied force (load)\",\n   \"aliases\": [\n    \"F\",\n    \"force\",\n    \"load\",\n    \"applied load\",\n    \"external force\"\n   ]\n  },\n  {\n   \"id\": \"E\",\n   \"type\": \"parameter\",\n   \"name\": \"Elastic (Young's) modulus of the material\",\n   \"aliases\": [\n    \"E\",\n    \"Young's modulus\",\n    \"modulus of elasticity\",\n    \"elastic modulus\",\n    \"material stiffness\"\n   ]\n  },\n  {\n   \"id\": \"L\",\n   \"type\": \"parameter\",\n   \"name\": \"Member length (characteristic length of the truss)\",\n   \"aliases\": [\n    \"L\",\n    \"length\",\n    \"bar length\",\n    \"member length\",\n    \"span\"\n   ]\n  },\n  {\n   \"id\": \"sigma\",\n   \"type\": \"parameter\",\n   \"name\": \"Stress (allowable stress)\",\n   \"aliases\": [\n    \"sigma\",\n    \"stress\",\n    \"allowable stress\",\n    \"permissible stress\"\n   ]\n  },\n  {\n   \"id\": \"a\",\n   \"type\": \"intermediate_output\",\n   \"name\": \"Bound base value a = F / sigma\",\n   \"aliases\": [\n    \"a\",\n    \"F/sigma\",\n    \"minimum area\"\n   ]\n  },\n  {\n   \"id\": \"expr_volume\",\n   \"type\": \"mathematical_expression\",\n   \"name\": \"Structural volume expression\",\n   \"aliases\": [\n    \"volume formula\",\n    \"sum of member length times area\",\n    \"total material volume expression\"\n   ],\n   \"expression\": \"L * (2*x1 + sqrt(2)*x2 + sqrt(x3) + x4)\"\n  },\n  {\n   \"id\": \"expr_displacement\",\n   \"type\": \"mathematical_expression\",\n   \"name\": \"Joint displacement expression\",\n   \"aliases\": [\n    \"displacement formula\",\n    \"deflection formula\",\n    \"F*L/E times compliance sum\"\n   ],\n   \"expression\": \"(F*L/E) * (2/x1 + 2*sqrt(2)/x2 - 2*sqrt(2)/x3 + 2/x4)\"\n  }\n ]\n}\n\nEXTRACTION TO MAP:\n[\n {\n  \"objective_id\": \"o1\",\n  \"objective_name\": \"Total volume of the structure\",\n  \"direction\": \"minimize\",\n  \"dependencies\": [\n   {\n    \"name\": \"Cross-sectional areas of the four bars\",\n    \"symbol\": \"x_1, x_2, x_3, x_4\",\n    \"type\": \"decision_variable\",\n    \"relationship\": \"Determines the structural volume of each bar in the truss.\"\n   },\n   {\n    \"name\": \"Bar length scale parameter\",\n    \"symbol\": \"L\",\n    \"type\": \"parameter\",\n    \"relationship\": \"Scales the overall length of the bars in the structural volume formula.\"\n   },\n   {\n    \"name\": \"Mathematical expression for structural volume\",\n    \"symbol\": \"f_1(x)\",\n    \"type\": \"mathematical_expression\",\n    \"relationship\": \"Calculates total volume based on cross-sectional areas and length parameter.\"\n   }\n  ]\n },\n {\n  \"objective_id\": \"o2\",\n  \"objective_name\": \"Displacement of specified truss joint\",\n  \"direction\": \"minimize\",\n  \"dependencies\": [\n   {\n    \"name\": \"Cross-sectional areas of the four bars\",\n    \"symbol\": \"x_1, x_2, x_3, x_4\",\n    \"type\": \"decision_variable\",\n    \"relationship\": \"Determines member stiffnesses which influence the displacement of the truss joint under load.\"\n   },\n   {\n    \"name\": \"Applied force\",\n    \"symbol\": \"F\",\n    \"type\": \"parameter\",\n    \"relationship\": \"Magnitude of external load applied to the truss structure.\"\n   },\n   {\n    \"name\": \"Modulus of elasticity\",\n    \"symbol\": \"E\",\n    \"type\": \"parameter\",\n    \"relationship\": \"Material property defining stiffness used to compute joint displacement.\"\n   },\n   {\n    \"name\": \"Bar length scale parameter\",\n    \"symbol\": \"L\",\n    \"type\": \"parameter\",\n    \"relationship\": \"Length scale factor used in evaluating joint displacement.\"\n   },\n   {\n    \"name\": \"Mathematical expression for joint displacement\",\n    \"symbol\": \"f_2(x)\",\n    \"type\": \"mathematical_expression\",\n    \"relationship\": \"Calculates the joint displacement as a function of bar cross-sectional areas and structural parameters.\"\n   }\n  ]\n }\n]",
+    "raw_response": "{\"objective_mapping\":[{\"extracted_objective_id\":\"o1\",\"reference_objective_id\":\"f1\"},{\"extracted_objective_id\":\"o2\",\"reference_objective_id\":\"f2\"}],\"items\":[{\"extracted_objective_id\":\"o1\",\"dependency_name\":\"Cross-sectional areas of the four bars\",\"entity_ids\":[\"x1\",\"x2\",\"x3\",\"x4\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers explicitly to the cross-sectional areas of all four bars (x1, x2, x3, x4).\"},{\"extracted_objective_id\":\"o1\",\"dependency_name\":\"Bar length scale parameter\",\"entity_ids\":[\"L\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers to the characteristic bar length parameter L.\"},{\"extracted_objective_id\":\"o1\",\"dependency_name\":\"Mathematical expression for structural volume\",\"entity_ids\":[\"expr_volume\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers to the mathematical expression for structural volume.\"},{\"extracted_objective_id\":\"o2\",\"dependency_name\":\"Cross-sectional areas of the four bars\",\"entity_ids\":[\"x1\",\"x2\",\"x3\",\"x4\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers explicitly to the cross-sectional areas of all four bars (x1, x2, x3, x4).\"},{\"extracted_objective_id\":\"o2\",\"dependency_name\":\"Applied force\",\"entity_ids\":[\"F\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers to the applied force load F.\"},{\"extracted_objective_id\":\"o2\",\"dependency_name\":\"Modulus of elasticity\",\"entity_ids\":[\"E\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers to Young's modulus E.\"},{\"extracted_objective_id\":\"o2\",\"dependency_name\":\"Bar length scale parameter\",\"entity_ids\":[\"L\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers to the characteristic bar length parameter L.\"},{\"extracted_objective_id\":\"o2\",\"dependency_name\":\"Mathematical expression for joint displacement\",\"entity_ids\":[\"expr_displacement\"],\"category\":\"matches_entity\",\"type_correct\":true,\"meaning_error\":false,\"explanation\":\"Refers to the mathematical expression for joint displacement.\"}]}",
+    "seconds": 65.15793204307556,
+    "attempts": 1,
+    "usage": {
+      "candidates_token_count": 546,
+      "prompt_token_count": 2041,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2041
+        }
+      ],
+      "thoughts_token_count": 797,
+      "total_token_count": 3384
+    }
+  }
+}

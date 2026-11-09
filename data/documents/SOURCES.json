@@ -1,0 +1,30 @@
+[
+  {
+    "file": "desdeo_re_problem.py",
+    "origin": "DESDEO desdeo/problem/testproblems/re_problem.py",
+    "repo": "https://github.com/industrial-optimization-group/DESDEO",
+    "commit": "64ed671ef65a43e068357af0dec36d1f139faceb",
+    "document_type": "source_code"
+  },
+  {
+    "file": "desdeo_howto_re_problems.md",
+    "origin": "DESDEO docs/howtoguides/re_problems.ipynb (markdown cells only)",
+    "repo": "https://github.com/industrial-optimization-group/DESDEO",
+    "commit": "64ed671ef65a43e068357af0dec36d1f139faceb",
+    "document_type": "documentation"
+  },
+  {
+    "file": "desdeo_explanation_problem_format.md",
+    "origin": "DESDEO docs/explanation/problem_format.ipynb (markdown cells only)",
+    "repo": "https://github.com/industrial-optimization-group/DESDEO",
+    "commit": "64ed671ef65a43e068357af0dec36d1f139faceb",
+    "document_type": "documentation"
+  },
+  {
+    "file": "tanabe_ishibuchi_supplementary_S1.txt",
+    "origin": "Tanabe & Ishibuchi, supplementary file to 'An easy-to-use real-world multi-objective optimization problem suite' (Applied Soft Computing 89, 2020), sections S.1.1-S.1.4, text extracted with pypdf",
+    "repo": "https://github.com/ryojitanabe/reproblems (doc/re-supplementary_file.pdf)",
+    "commit": "7876b4e465eac381a256e461d1310b8bb2b92846",
+    "document_type": "literature"
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "problem_id": "RE21",
+  "purpose": "Records which ground-truth facts each description states, so that 'explicit' vs 'retrieved' vs 'inferred' can be judged and extraction is not confused with discovery. Not shown to any extraction method.",
+  "design_principles": [
+    "Same underlying problem and same ground truth for both variants.",
+    "No formulas, no mapping of parameters to objectives in either variant.",
+    "The complete variant names every physical quantity the implementation uses, with its value, but leaves it to the reader to decide which objective needs which quantity.",
+    "The incomplete variant names only the decision variables and the two objectives."
+  ],
+  "variants": {
+    "complete": {
+      "file": "re21_complete.txt"
+    },
+    "incomplete": {
+      "file": "re21_incomplete.txt"
+    }
+  },
+  "facts": [
+    {
+      "fact": "Four decision variables = cross-sectional areas of four bars",
+      "ground_truth_ids": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ],
+      "complete": "stated",
+      "incomplete": "stated"
+    },
+    {
+      "fact": "Objective 1 = minimize total structural volume",
+      "ground_truth_ids": [
+        "f1"
+      ],
+      "complete": "stated",
+      "incomplete": "stated"
+    },
+    {
+      "fact": "Objective 2 = minimize displacement of a particular joint",
+      "ground_truth_ids": [
+        "f2"
+      ],
+      "complete": "stated",
+      "incomplete": "stated"
+    },
+    {
+      "fact": "Bar length L = 200 cm",
+      "ground_truth_ids": [
+        "L"
+      ],
+      "complete": "stated (value + unit)",
+      "incomplete": "OMITTED"
+    },
+    {
+      "fact": "Applied force F = 10 kN",
+      "ground_truth_ids": [
+        "F"
+      ],
+      "complete": "stated (value + unit)",
+      "incomplete": "OMITTED (only 'when the structure is loaded')"
+    },
+    {
+      "fact": "Modulus of elasticity E = 2e5 kN/cm^2",
+      "ground_truth_ids": [
+        "E"
+      ],
+      "complete": "stated (value + unit)",
+      "incomplete": "OMITTED"
+    },
+    {
+      "fact": "Allowable stress sigma = 10 kN/cm^2, which with F sets the minimum area; upper bound = 3x minimum",
+      "ground_truth_ids": [
+        "sigma",
+        "a"
+      ],
+      "complete": "stated (role: bounds only)",
+      "incomplete": "OMITTED"
+    },
+    {
+      "fact": "Volume expression L*(2x1 + sqrt(2)x2 + sqrt(x3) + x4)",
+      "ground_truth_ids": [
+        "expr_volume"
+      ],
+      "complete": "NOT stated (only that volume is minimized)",
+      "incomplete": "NOT stated"
+    },
+    {
+      "fact": "Displacement expression (F L / E)*(2/x1 + 2sqrt(2)/x2 - 2sqrt(2)/x3 + 2/x4)",
+      "ground_truth_ids": [
+        "expr_displacement"
+      ],
+      "complete": "NOT stated",
+      "incomplete": "NOT stated"
+    },
+    {
+      "fact": "Individual bounds: x1,x4 in [a,3a]; x2,x3 in [sqrt(2)a,3a]",
+      "ground_truth_ids": [],
+      "complete": "PARTIALLY stated (common minimum + 3x upper bound; the sqrt(2) lower bound for x2,x3 is not stated)",
+      "incomplete": "OMITTED"
+    }
+  ],
+  "known_simplifications": [
+    "'Characteristic bar length' is used because the implementation has a single length L; it does not say that all four bars have length L.",
+    "'Statically loaded' and 'single external force' are engineering context consistent with the formulation, not stated in DESDEO source.",
+    "The truss geometry (bar arrangement, angles) is not described in either variant; the source of the sqrt(2) coefficients is therefore not stated."
+  ]
+}

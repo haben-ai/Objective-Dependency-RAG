@@ -1,0 +1,4 @@
+{
+  "purpose": "Manual corrections of judge decisions (ground-truth rule R10). Each entry overrides the judge's entity mapping for a dependency name, optionally restricted to one run_id and/or extracted objective name.",
+  "overrides": []
+}

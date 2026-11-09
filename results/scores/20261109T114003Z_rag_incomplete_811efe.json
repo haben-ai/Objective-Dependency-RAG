@@ -1,0 +1,260 @@
+{
+  "run_id": "20261109T114003Z_rag_incomplete_811efe",
+  "method": "rag",
+  "model": "gemini-3.6-flash",
+  "problem_id": "RE21",
+  "description_variant": "incomplete",
+  "corpus": "full",
+  "judge_model": "gemini-3.5-flash",
+  "overrides_applied": [],
+  "warnings": [],
+  "objective_mapping": {
+    "o1": "f1",
+    "o2": "f2"
+  },
+  "per_objective": {
+    "f1": {
+      "items": 3,
+      "true_positives": 3,
+      "false_positives": 0,
+      "duplicates": 0,
+      "required": 6,
+      "covered": 6,
+      "missing": 0,
+      "missing_ids": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "unsupported_items": 0,
+      "unsupported_rate": 0.0,
+      "type_errors": 0,
+      "meaning_errors": 0,
+      "over_attributions": 0,
+      "not_in_implementation": 0,
+      "vague": 0,
+      "covered_from_description": 4,
+      "covered_beyond_description": 2,
+      "beyond_description_with_verified_evidence": 2
+    },
+    "f2": {
+      "items": 5,
+      "true_positives": 5,
+      "false_positives": 0,
+      "duplicates": 0,
+      "required": 8,
+      "covered": 8,
+      "missing": 0,
+      "missing_ids": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "unsupported_items": 0,
+      "unsupported_rate": 0.0,
+      "type_errors": 0,
+      "meaning_errors": 0,
+      "over_attributions": 0,
+      "not_in_implementation": 0,
+      "vague": 0,
+      "covered_from_description": 4,
+      "covered_beyond_description": 4,
+      "beyond_description_with_verified_evidence": 4
+    }
+  },
+  "overall": {
+    "items": 8,
+    "true_positives": 8,
+    "false_positives": 0,
+    "duplicates": 0,
+    "required": 14,
+    "covered": 14,
+    "missing": 0,
+    "missing_ids": [],
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "unsupported_items": 0,
+    "unsupported_rate": 0.0,
+    "type_errors": 0,
+    "meaning_errors": 0,
+    "over_attributions": 0,
+    "not_in_implementation": 0,
+    "vague": 0,
+    "covered_from_description": 8,
+    "covered_beyond_description": 6,
+    "beyond_description_with_verified_evidence": 6
+  },
+  "items": [
+    {
+      "extracted_objective_id": "o1",
+      "reference_objective_id": "f1",
+      "dependency": "Cross-sectional areas of the four bars",
+      "type": "decision_variable",
+      "evidence_status": "explicit",
+      "evidence_verified": true,
+      "entity_ids": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers explicitly to the cross-sectional areas of all four bars (x1, x2, x3, x4).",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches x1, x2, x3, x4",
+      "credited": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ]
+    },
+    {
+      "extracted_objective_id": "o1",
+      "reference_objective_id": "f1",
+      "dependency": "Bar length scale parameter",
+      "type": "parameter",
+      "evidence_status": "retrieved",
+      "evidence_verified": true,
+      "entity_ids": [
+        "L"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the characteristic bar length parameter L.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches L",
+      "credited": [
+        "L"
+      ]
+    },
+    {
+      "extracted_objective_id": "o1",
+      "reference_objective_id": "f1",
+      "dependency": "Mathematical expression for structural volume",
+      "type": "mathematical_expression",
+      "evidence_status": "retrieved",
+      "evidence_verified": true,
+      "entity_ids": [
+        "expr_volume"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the mathematical expression for structural volume.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches expr_volume",
+      "credited": [
+        "expr_volume"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Cross-sectional areas of the four bars",
+      "type": "decision_variable",
+      "evidence_status": "explicit",
+      "evidence_verified": true,
+      "entity_ids": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers explicitly to the cross-sectional areas of all four bars (x1, x2, x3, x4).",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches x1, x2, x3, x4",
+      "credited": [
+        "x1",
+        "x2",
+        "x3",
+        "x4"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Applied force",
+      "type": "parameter",
+      "evidence_status": "retrieved",
+      "evidence_verified": true,
+      "entity_ids": [
+        "F"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the applied force load F.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches F",
+      "credited": [
+        "F"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Modulus of elasticity",
+      "type": "parameter",
+      "evidence_status": "retrieved",
+      "evidence_verified": true,
+      "entity_ids": [
+        "E"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to Young's modulus E.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches E",
+      "credited": [
+        "E"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Bar length scale parameter",
+      "type": "parameter",
+      "evidence_status": "retrieved",
+      "evidence_verified": true,
+      "entity_ids": [
+        "L"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the characteristic bar length parameter L.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches L",
+      "credited": [
+        "L"
+      ]
+    },
+    {
+      "extracted_objective_id": "o2",
+      "reference_objective_id": "f2",
+      "dependency": "Mathematical expression for joint displacement",
+      "type": "mathematical_expression",
+      "evidence_status": "retrieved",
+      "evidence_verified": true,
+      "entity_ids": [
+        "expr_displacement"
+      ],
+      "judge_category": "matches_entity",
+      "judge_explanation": "Refers to the mathematical expression for joint displacement.",
+      "type_error": false,
+      "meaning_error": false,
+      "outcome": "true_positive",
+      "reason": "matches expr_displacement",
+      "credited": [
+        "expr_displacement"
+      ]
+    }
+  ]
+}

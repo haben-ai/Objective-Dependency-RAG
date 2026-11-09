@@ -1,0 +1,3 @@
+A structural engineer is designing a truss made of four bars. The engineer can choose the cross-sectional area of each of the four bars, and these four areas are the only quantities the engineer can change.
+
+Two goals are pursued at the same time. The engineer wants the total volume of the structure to be as small as possible, and wants the displacement of one particular joint of the truss to be as small as possible when the structure is loaded.
